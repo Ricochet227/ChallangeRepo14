@@ -1,0 +1,17 @@
+[
+    {
+      "title": "CSS Facts",
+      "content": "Css is how you make things look nice :)",
+      "user_id": "1"
+    }, 
+    {
+      "title": "HTML Facts",
+      "content": "HTML is the core of the webite",
+      "user_id": "1"
+    }, 
+    {
+      "title": "JavaScript Facts",
+      "content": "JavaScript is practically the engine for the website",
+      "user_id": "1"
+    }
+  ]

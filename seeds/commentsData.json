@@ -1,0 +1,17 @@
+[
+    {
+      "content": "JS is the way to go fr",
+      "user_id": "1",
+      "blog_id": "3"
+    }, 
+    {
+      "content": "JavaScript is such a great tool",
+      "user_id": "2",
+      "blog_id": "3"
+    }, 
+    {
+      "content": "I agree 100% js is amazing as long as you know what your doing",
+      "user_id": "3",
+      "blog_id": "3"
+    }
+  ]
