@@ -1,21 +1,33 @@
-const Sequelize = require('sequelize');
-require('dotenv').config();
+const sequelize = require('../config/connection');
+const { Blog, User, Comments } = require('../models');
 
-let sequelize;
+const blogData = require('./blogData.json');
+const userData = require('./userData.json');
+const commentsData = require('./commentsData.json');
 
-if (process.env.JAWSDB_URL) {
-  sequelize = new Sequelize(process.env.JAWSDB_URL);
-} else {
-  sequelize = new Sequelize(
-    process.env.DB_NAME,
-    process.env.DB_USER,
-    process.env.DB_PASSWORD,
-    {
-      host: 'localhost',
-      dialect: 'mysql',
-      port: 3306
-    }
-  );
-}
+const seedDatabase = async () => {
+  await sequelize.sync({ force: true });
 
-module.exports = sequelize;
+  const users = await User.bulkCreate(userData, {
+    individualHooks: true,
+    returning: true,
+  });
+
+  for (const blog of blogData) {
+    await Blog.create({
+      ...blog,
+    });
+  }
+
+  for (const comments of commentsData) {
+    await Comments.create({
+      ...comments,
+    });
+  }
+
+  process.exit(0);
+};
+
+seedDatabase();
+
+module.exports = seedDatabase;

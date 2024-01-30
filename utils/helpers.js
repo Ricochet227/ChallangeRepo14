@@ -1,8 +1,8 @@
 module.exports = {
     format_date: (date) => {
-        return date.toLocateDateString();
+      return date.toLocaleDateString();
     },
     format_amount: (amount) => {
-        return parseInt(amount).toLocaleString();
+      return parseInt(amount).toLocaleString();
     },
-};
+  };
